@@ -1,5 +1,6 @@
 from handlers import (parse_input, add_contact, change_contact,
                       show_phone, show_all, add_birthday, show_birthday, birthdays)
+from utils.backup import save_data
 
 
 def run_assistant(book):
@@ -9,6 +10,7 @@ def run_assistant(book):
         command, *args = parse_input(user_input)
 
         if command in ["close", "exit"]:
+            save_data(book)
             print("Good bye!")
             break
         elif command == "hello":

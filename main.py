@@ -1,9 +1,9 @@
 from assistant import run_assistant
-from classes import AddressBook
+from utils.backup import load_data
 
 
 def main():
-    book = AddressBook()
+    book = load_data()
 
     run_assistant(book)
 
